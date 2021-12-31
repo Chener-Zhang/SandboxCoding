@@ -1,27 +1,40 @@
-import React from "react";
+import React, { useState } from "react";
 import "./Calculator.css";
 
 function Calculator() {
+  const [display, setDisplay] = useState("");
+  const [counter, setCounter] = useState(0);
+
+  function onClickHandler(e) {
+    switch (e.target.innerText) {
+      case "Clear":
+        return setDisplay(0);
+      default:
+        return setDisplay(e.target.innerText);
+    }
+  }
   return (
     <div className="container">
-      <div className="result"></div>
-      <div>1</div>
-      <div>2</div>
-      <div>3</div>
-      <div>x</div>
-      <div>4</div>
-      <div>5</div>
-      <div>6</div>
-      <div>-</div>
-      <div>7</div>
-      <div>8</div>
-      <div>9</div>
-      <div>+</div>
-      <div>0</div>
-      <div>.</div>
-      <div>=</div>
-      <div>/</div>
-      <div className="clear">Clear</div>
+      <div className="result">{display}</div>
+      <div onClick={(e) => onClickHandler(e)}>1</div>
+      <div onClick={(e) => onClickHandler(e)}>2</div>
+      <div onClick={(e) => onClickHandler(e)}>3</div>
+      <div onClick={(e) => onClickHandler(e)}>x</div>
+      <div onClick={(e) => onClickHandler(e)}>4</div>
+      <div onClick={(e) => onClickHandler(e)}>5</div>
+      <div onClick={(e) => onClickHandler(e)}>6</div>
+      <div onClick={(e) => onClickHandler(e)}>-</div>
+      <div onClick={(e) => onClickHandler(e)}>7</div>
+      <div onClick={(e) => onClickHandler(e)}>8</div>
+      <div onClick={(e) => onClickHandler(e)}>9</div>
+      <div onClick={(e) => onClickHandler(e)}>+</div>
+      <div onClick={(e) => onClickHandler(e)}>0</div>
+      <div onClick={(e) => onClickHandler(e)}>.</div>
+      <div onClick={(e) => onClickHandler(e)}>=</div>
+      <div onClick={(e) => onClickHandler(e)}>/</div>
+      <div className="clear" onClick={(e) => onClickHandler(e)}>
+        Clear
+      </div>
     </div>
   );
 }
