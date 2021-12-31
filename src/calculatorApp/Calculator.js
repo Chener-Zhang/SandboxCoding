@@ -2,20 +2,19 @@ import React, { useState } from "react";
 import "./Calculator.css";
 
 function Calculator() {
-  const [display, setDisplay] = useState("");
   const [counter, setCounter] = useState(0);
 
   function onClickHandler(e) {
     switch (e.target.innerText) {
-      case "Clear":
-        return setDisplay(0);
+      case "+":
+        setCounter(counter + 1);
       default:
-        return setDisplay(e.target.innerText);
+        return null;
     }
   }
   return (
     <div className="container">
-      <div className="result">{display}</div>
+      <div className="result">{counter}</div>
       <div onClick={(e) => onClickHandler(e)}>1</div>
       <div onClick={(e) => onClickHandler(e)}>2</div>
       <div onClick={(e) => onClickHandler(e)}>3</div>
