@@ -1,0 +1,29 @@
+.container {
+  border-style: solid;
+  width: 500px;
+  height: 600px;
+  position: absolute;
+  margin-top: 30%;
+  margin-left: 40%;
+  display: grid;
+  grid-template-columns: repeat(4, 2fr);
+}
+
+.container div {
+  width: 100%;
+  height: 100%;
+  border-style: dashed;
+  font-size: xx-large;
+  text-align: center;
+  font-weight: bold;
+  padding-top: 30px;
+}
+
+.result {
+  grid-column: 1/5;
+  height: 100%;
+}
+
+.clear {
+  grid-column: 1/5;
+}
