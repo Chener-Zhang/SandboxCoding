@@ -1,14 +1,17 @@
 import React, { Fragment } from "react";
+import CartButton from "./CartButton";
+import MealsSummary from "./MealsSummary";
+
 import "./Header.css";
-import mealImg from "./img/meals.jpg";
 
 function Header() {
   return (
     <Fragment>
-      <header class="site-header">
+      <header className="site-header">
         <h2>Brand</h2>
-        <button>Cart</button>
+        <CartButton />
       </header>
+      <MealsSummary />
     </Fragment>
   );
 }
