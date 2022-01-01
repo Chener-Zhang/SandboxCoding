@@ -1,0 +1,20 @@
+.itemDisplay {
+  width: 800px;
+  height: 500px;
+  border-style: solid;
+  position: absolute;
+  top: 30%;
+  left: 28%;
+}
+
+ul {
+  display: grid;
+  row-gap: 1em;
+}
+
+li {
+  display: flex;
+  list-style-type: none;
+  border-style: solid;
+  justify-content: space-around;
+}

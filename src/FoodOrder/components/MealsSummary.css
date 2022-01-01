@@ -1,12 +1,15 @@
 .mealSummary {
-  width: 250px;
-  height: 230px;
+  width: 500px;
+  height: 150px;
   position: absolute;
-  left: 45%;
+  top: 10%;
+  left: 35%;
   box-shadow: 0 3px 10px rgb(0 0 0 / 0.2);
+  background-color: #023e8a;
 }
 
 p {
+  color: white;
   align-self: center;
   text-align: justify;
   margin: 2em;
