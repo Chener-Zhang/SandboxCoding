@@ -7,7 +7,7 @@
   display: grid;
   grid-template-rows: 20% 60% 20%;
   border-radius: 20px;
-  border-style: solid;
+  /* border-style: solid; */
   box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
 }
 
