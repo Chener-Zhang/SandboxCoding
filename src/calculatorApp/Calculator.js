@@ -48,9 +48,9 @@ function Calculator() {
         <div onClick={(e) => onClickHandler(e)}>.</div>
         <div onClick={(e) => onClickHandler(e)}>=</div>
         <div onClick={(e) => onClickHandler(e)}>/</div>
-        <div className="clear" onClick={(e) => onClickHandler(e)}>
-          Clear
-        </div>
+      </div>
+      <div className="clear" onClick={(e) => onClickHandler(e)}>
+        Clear
       </div>
     </div>
   );
