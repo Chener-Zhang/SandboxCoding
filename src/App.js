@@ -1,10 +1,10 @@
 import "./styles.css";
-import Calculator from "./calculatorApp/Calculator";
+import FoodOrder from "./FoodOrder/FoodOrder";
 
 export default function App() {
   return (
     <div className="App">
-      <Calculator />
+      <FoodOrder />
     </div>
   );
 }

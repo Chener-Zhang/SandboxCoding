@@ -1,0 +1,16 @@
+header {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  background-color: rgb(127, 38, 7);
+  height: 3em;
+}
+
+h2 {
+  color: white;
+  font-weight: bold;
+}
+
+button {
+  width: 100px;
+}
