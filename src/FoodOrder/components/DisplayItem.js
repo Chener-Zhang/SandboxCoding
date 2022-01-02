@@ -1,5 +1,8 @@
 import { Fragment } from "react";
 import { Meals } from "./Meals";
+import { AiOutlinePlus } from "react-icons/ai";
+import { AiOutlineMinus } from "react-icons/ai";
+
 import "./DisplayItem.css";
 
 function DisplayItem() {
@@ -11,10 +14,15 @@ function DisplayItem() {
           {Meals.map((item) => {
             return (
               <li key={item.id}>
-                {" "}
-                <h3>{item.name}</h3>
-                <h4>{item.description}</h4>
-                <h4>{item.price}</h4>
+                <div>
+                  <h3>{item.name}</h3>
+                  <h4>{item.description}</h4>
+                </div>
+                <div className="itemprice">
+                  <AiOutlineMinus />
+                  <h4>{item.price}$</h4>
+                  <AiOutlinePlus />
+                </div>
               </li>
             );
           })}
