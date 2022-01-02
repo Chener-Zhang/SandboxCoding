@@ -30,14 +30,65 @@ const initalState = {
     }
   ],
   sum: 0,
-  totalQuantity: 0
+  cart: []
 };
 
 const cartReducer = (state = initalState, action) => {
-  console.log(state);
   switch (action.type) {
     case "ADDITEM":
-      break;
+      //Find in meals
+      let item = state.Meals.find((item) => item.id === action.id);
+
+      //Find in cart
+      let existedItem = state.cart.find((item) => item.id === action.id);
+
+      if (existedItem) {
+        existedItem.quantity += 1;
+        return {
+          ...state,
+          sum: state.sum + existedItem.price
+        };
+      } else {
+        item.quantity = 1;
+        const newPrice = state.sum + item.price;
+        return {
+          ...state,
+          sum: newPrice,
+          cart: [...state.cart, item]
+        };
+      }
+    case "REMOVEITEM":
+      //Find in cart
+      let toRemoveItem = state.cart.find((item) => item.id === action.id);
+
+      //If exist
+      if (toRemoveItem) {
+        //if the last one
+        if (toRemoveItem.quantity - 1 === 0) {
+          toRemoveItem.quantity -= 1;
+          const filterCart = state.cart.filter((item) => item.id !== action.id);
+          const newSum = state.sum - toRemoveItem.price;
+          return {
+            ...state,
+            sum: newSum,
+            cart: filterCart
+          };
+        }
+        //if not the last item
+        else {
+          toRemoveItem.quantity -= 1;
+          const newSum = state.sum - toRemoveItem.price;
+          return {
+            ...state,
+            sum: newSum
+          };
+        }
+      }
+      //if not exist
+      else {
+        return state;
+      }
+
     default:
       return state;
   }

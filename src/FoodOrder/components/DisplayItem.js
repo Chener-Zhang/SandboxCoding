@@ -12,7 +12,7 @@ function DisplayItem() {
   return (
     <Fragment>
       <div className="itemDisplay">
-        <div>{cart.totalQuantity}</div>
+        <div>{parseFloat(cart.sum).toFixed(2)}</div>
         <ul>
           {Meals.map((item) => {
             return (
@@ -24,7 +24,7 @@ function DisplayItem() {
                 <div className="itemprice">
                   <button
                     className="addremoveButton"
-                    // onClick={() => dispatch(removeItem(item.id))}
+                    onClick={() => dispatch(removeItem(item.id))}
                   >
                     -
                   </button>
@@ -36,6 +36,7 @@ function DisplayItem() {
                     +
                   </button>
                 </div>
+                <div>Quantity: {item.quantity}</div>
               </li>
             );
           })}
