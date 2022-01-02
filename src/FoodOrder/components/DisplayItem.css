@@ -29,3 +29,16 @@ li {
   display: flex;
   justify-content: space-evenly;
 }
+
+h4 {
+  padding-top: 0.8em;
+}
+
+.addremoveButton {
+  color: black;
+  border-style: none;
+}
+
+.addremoveButton:hover {
+  background-color: #f5f3f4;
+}

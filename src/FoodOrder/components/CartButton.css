@@ -11,3 +11,7 @@ button {
   padding: 0.3em;
   z-index: 10;
 }
+
+button:hover {
+  opacity: 0.8;
+}

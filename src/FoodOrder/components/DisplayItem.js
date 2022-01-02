@@ -1,7 +1,5 @@
 import { Fragment } from "react";
 import { Meals } from "./Meals";
-import { AiOutlinePlus } from "react-icons/ai";
-import { AiOutlineMinus } from "react-icons/ai";
 
 import "./DisplayItem.css";
 
@@ -19,9 +17,9 @@ function DisplayItem() {
                   <h4>{item.description}</h4>
                 </div>
                 <div className="itemprice">
-                  <AiOutlineMinus />
+                  <button className="addremoveButton">-</button>
                   <h4>{item.price}$</h4>
-                  <AiOutlinePlus />
+                  <button className="addremoveButton">+</button>
                 </div>
               </li>
             );
