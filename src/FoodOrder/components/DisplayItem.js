@@ -1,6 +1,6 @@
 import { Fragment } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { addItem, removeItem, sumItem } from "../actions/cartAction";
+import { addItem, removeItem } from "../actions/cartAction";
 
 import "./DisplayItem.css";
 

@@ -12,8 +12,8 @@ export function removeItem(id) {
   };
 }
 
-export function sumItem() {
+export function updateCart() {
   return {
-    type: "SUMITEM"
+    type: "UPDATECART"
   };
 }
