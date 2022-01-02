@@ -9,6 +9,7 @@ function Pop() {
   return (
     <>
       <ul className="cartStyle">
+        <h2>Total cost : {parseFloat(data.sum).toFixed(2)} $ </h2>
         {cart.map((item) => {
           return (
             <li key={item.id}>
