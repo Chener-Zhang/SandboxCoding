@@ -5,11 +5,10 @@ import { addItem, removeItem, sumItem } from "../actions/cartAction";
 import "./DisplayItem.css";
 
 function DisplayItem() {
-  console.log(this);
   const cart = useSelector((state) => state.cartReducer);
   const dispatch = useDispatch();
   const Meals = cart.Meals;
-  console.log(Meals);
+
   return (
     <Fragment>
       <div className="itemDisplay">
@@ -24,14 +23,14 @@ function DisplayItem() {
                 <div className="itemprice">
                   <button
                     className="addremoveButton"
-                    onClick={() => dispatch(removeItem(item))}
+                    // onClick={() => dispatch(removeItem(item.id))}
                   >
                     -
                   </button>
                   <h4>{item.price}$</h4>
                   <button
                     className="addremoveButton"
-                    onClick={() => dispatch(addItem(item))}
+                    onClick={() => dispatch(addItem(item.id))}
                   >
                     +
                   </button>
