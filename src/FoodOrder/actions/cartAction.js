@@ -1,14 +1,14 @@
 export function addItem(item) {
   return {
     type: "ADDITEM",
-    item: item
+    payload: item
   };
 }
 
 export function removeItem(item) {
   return {
     type: "REMOVEITEM",
-    item: item
+    payload: item
   };
 }
 
