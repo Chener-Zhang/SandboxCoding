@@ -24,14 +24,14 @@ function DisplayItem() {
                 <div className="itemprice">
                   <button
                     className="addremoveButton"
-                    onClick={() => dispatch(removeItem(item.name))}
+                    onClick={() => dispatch(removeItem(item))}
                   >
                     -
                   </button>
                   <h4>{item.price}$</h4>
                   <button
                     className="addremoveButton"
-                    onClick={() => dispatch(addItem(item.name))}
+                    onClick={() => dispatch(addItem(item))}
                   >
                     +
                   </button>
