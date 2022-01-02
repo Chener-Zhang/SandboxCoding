@@ -1,14 +1,14 @@
-export function addItem(item) {
+export function addItem(id) {
   return {
     type: "ADDITEM",
-    payload: item
+    id: id
   };
 }
 
-export function removeItem(item) {
+export function removeItem(id) {
   return {
     type: "REMOVEITEM",
-    payload: item
+    id: id
   };
 }
 

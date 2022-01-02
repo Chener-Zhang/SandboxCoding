@@ -1,15 +1,15 @@
 import { Fragment } from "react";
-import { Meals } from "./Meals";
-
-import "./DisplayItem.css";
 import { useDispatch, useSelector } from "react-redux";
 import { addItem, removeItem, sumItem } from "../actions/cartAction";
 
+import "./DisplayItem.css";
+
 function DisplayItem() {
+  console.log(this);
   const cart = useSelector((state) => state.cartReducer);
   const dispatch = useDispatch();
-  console.log(cart);
-
+  const Meals = cart.Meals;
+  console.log(Meals);
   return (
     <Fragment>
       <div className="itemDisplay">
@@ -44,5 +44,4 @@ function DisplayItem() {
     </Fragment>
   );
 }
-
 export default DisplayItem;
