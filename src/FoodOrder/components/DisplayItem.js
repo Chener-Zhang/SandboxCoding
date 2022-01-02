@@ -12,7 +12,7 @@ function DisplayItem() {
   return (
     <Fragment>
       <div className="itemDisplay">
-        <div>{parseFloat(cart.sum).toFixed(2)}</div>
+        <div>Total : {parseFloat(cart.sum).toFixed(2)} $</div>
         <ul>
           {Meals.map((item) => {
             return (
