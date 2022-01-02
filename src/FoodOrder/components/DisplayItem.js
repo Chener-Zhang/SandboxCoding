@@ -12,6 +12,7 @@ function DisplayItem() {
   return (
     <Fragment>
       <div className="itemDisplay">
+        <div>{cart.totalQuantity}</div>
         <ul>
           {Meals.map((item) => {
             return (

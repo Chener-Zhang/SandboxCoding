@@ -29,35 +29,15 @@ const initalState = {
       quantity: 0
     }
   ],
-  sum: 0
+  sum: 0,
+  totalQuantity: 0
 };
 
 const cartReducer = (state = initalState, action) => {
   console.log(state);
   switch (action.type) {
     case "ADDITEM":
-      return {
-        ...state,
-        Meals: state.Meals.map((item) => {
-          if (item.id === action.id) {
-            if (item.quantity == 0) {
-              return {
-                ...item,
-                quantity: 1
-              };
-            } else {
-              const addQuantity = (item.quantity += 1);
-              return {
-                ...item,
-                quantity: addQuantity
-              };
-            }
-          } else {
-            return item;
-          }
-        })
-      };
-
+      break;
     default:
       return state;
   }
