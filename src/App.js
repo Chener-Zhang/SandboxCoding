@@ -1,10 +1,10 @@
 import "./styles.css";
-import Todo from "./Todo/Todo";
+import TimeCounter from "./TimeCounter/TimeCounter";
 
 export default function App() {
   return (
     <div className="App">
-      <Todo />
+      <TimeCounter />
     </div>
   );
 }
