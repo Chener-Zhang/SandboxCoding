@@ -1,17 +1,17 @@
-import Reat, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 
 function TimeCounter() {
   const [active, setActive] = useState(false);
   const [time, setTime] = useState(0);
+
   useEffect(() => {
     let interval = null;
     if (active) {
       interval = setInterval(() => setTime((time) => time + 1), 1000);
-    } else if (!active && time !== 0) {
-      clearInterval(interval);
     }
     return () => clearInterval(interval);
-  }, [time, active]);
+  }, [active]);
+
   return (
     <div>
       <h2>Time: {time}</h2>
