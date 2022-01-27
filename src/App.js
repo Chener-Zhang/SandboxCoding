@@ -12,12 +12,12 @@ export default function App() {
   const dark = {
     body: "#363537"
   };
-  
+
   const GlobalStyle = createGlobalStyle`
   body{
     background: ${({ theme }) => theme.body};
   }
-  `c
+  `;
 
   return (
     <ThemeProvider theme={theme === "light" ? dark : light}>
