@@ -1,5 +1,7 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
+import Pagination from "@material-ui/lab/Pagination";
+
 export default function DummyAPI() {
   const [data, setData] = useState([]);
   const [search, setSearch] = useState("");
@@ -26,6 +28,7 @@ export default function DummyAPI() {
             })}
         </ul>
       )}
+      <Pagination count={10} />
     </>
   );
 }
