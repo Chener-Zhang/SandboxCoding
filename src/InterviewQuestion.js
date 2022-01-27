@@ -17,7 +17,19 @@ export default function InterviewQuestion() {
     return list;
   }
   //Function return number of apartments
-  function CountApartment() {}
+  function CountApartment(arr) {
+    const max = Math.max(...arr);
+    const min = Math.min(...arr);
+    return max - min;
+  }
+
+  function ObjectTraversal(obj) {
+    let result = [];
+    for (const [key, value] of Object.entries(obj)) {
+      result.push(value);
+    }
+    return result;
+  }
 
   return <></>;
 }
