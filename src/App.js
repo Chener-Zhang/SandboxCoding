@@ -1,10 +1,10 @@
 import "./styles.css";
-import ThemeToggle from "./ThemeToggle";
+import CalendarPicker from "./CalendarPicker";
 
 export default function App() {
   return (
     <>
-      <ThemeToggle />
+      <CalendarPicker />
     </>
   );
 }
