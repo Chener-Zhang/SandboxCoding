@@ -4,6 +4,7 @@ export default function DummyAPI() {
   const [data, setData] = useState([]);
   const [search, setSearch] = useState("");
   useEffect(() => {
+    //then((res) => setData(res.data.data)).slice(0,10)
     axios
       .get("https://dummy.restapiexample.com/api/v1/employees")
       .then((res) => setData(res.data.data))
