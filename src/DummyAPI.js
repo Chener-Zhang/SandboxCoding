@@ -7,57 +7,58 @@ export default function DummyAPI() {
   const [page, setPage] = useState(1);
   const [pageMax, setPageMax] = useState(0);
   const dataPerPage = 5;
-
+  const currentPage = data.slice((page - 1) * dataPerPage, page * dataPerPage);
   useEffect(() => {
     //then((res) => setData(res.data.data)).slice(0,10)
     axios
       .get("https://dummy.restapiexample.com/api/v1/employees")
       .then((res) => {
         setData(res.data.data);
-        const page = Math.ceil(res.data.data.length / dataPerPage);
-        setPageMax(page);
+        const pageN = Math.ceil(res.data.data.length / dataPerPage);
+        setPageMax(pageN);
       })
       .catch((errer) => console.log(errer));
   }, []);
+
+  const pageList = [];
+  if (pageMax) {
+    for (let i = 1; i <= pageMax; i++) {
+      pageList.push(i);
+    }
+  }
+  function changePage(id) {
+    const page = Number(id);
+    setPage(page);
+  }
 
   return (
     <>
       <input value={search} onChange={(e) => setSearch(e.target.value)} />
       <h3>{search}</h3>
-      {data && (
+      {currentPage && (
         <ul>
-          {data
+          {currentPage
             .filter((item) => {
               return item.employee_name.toLowerCase().includes(search);
             })
-            .map((item, index) => {
-              if (page === Math.ceil(index / dataPerPage)) {
-                return <li key={item.key}>{item.employee_name}</li>;
-              }
+            .map((item) => {
+              return <li key={item.key}>{item.employee_name}</li>;
             })}
         </ul>
       )}
-      <div>
-        <h2>{page}</h2>
-        <button
-          onClick={() => {
-            if (page !== 0) {
-              setPage(page - 1);
-            }
-          }}
-        >
-          previous
-        </button>
-        <button
-          onClick={() => {
-            if (page < pageMax) {
-              setPage(page + 1);
-            }
-          }}
-        >
-          next
-        </button>
-      </div>
+
+      {pageList && (
+        <ul style={{ display: "flex", listStyle: "none" }}>
+          {pageList.map((item) => {
+            return (
+              <li key={item} onClick={(e) => changePage(e.target.innerHTML)}>
+                {item}
+              </li>
+            );
+          })}
+        </ul>
+      )}
+      <div></div>
     </>
   );
 }
