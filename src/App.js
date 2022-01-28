@@ -5,8 +5,8 @@ import DummyAPI from "./DummyAPI";
 export default function App() {
   return (
     <>
-      {/* <InterviewQuestion /> */}
-      <DummyAPI />
+      <InterviewQuestion />
+      {/* <DummyAPI /> */}
     </>
   );
 }

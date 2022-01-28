@@ -30,6 +30,34 @@ export default function InterviewQuestion() {
     }
     return result;
   }
+  // Given an array of integers, return an array of integers which contains
+  // [1st integer, Sum of next 2 integers (2nd, 3rd), Sum of next 3 integers
+  const find = (arr) => {
+    const arr2 = [];
+    for (let i = 1, j = 0; j < arr.length; i++) {
+      const item = arr.slice(j, j + i).reduce((acc, item) => {
+        return acc + item;
+      });
+      arr2.push(item);
+      j = j + i;
+    }
+    return arr2;
+  };
 
+  //Cout(sPrime)
+  function countPrime(n) {
+    let counter = 0;
+    function isPrime(num) {
+      for (var i = 2; i < num; i++) if (num % i === 0) return false;
+      return num > 1;
+    }
+    for (let i = 0; i <= n; i++) {
+      if (isPrime(i)) {
+        counter++;
+      }
+    }
+    return counter;
+  }
+  console.log(countPrime(8));
   return <></>;
 }
